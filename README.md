@@ -2,7 +2,7 @@
 
 ---
 
-# LeafByte – Chrome Extension for Tracking Digital Carbon Footprint
+# LeafByte : Chrome Extension for Tracking Digital Carbon Footprint
 
 **LeafByte** is an advanced Chrome extension that helps users monitor, understand, and reduce their digital carbon footprint. Designed with performance, accessibility, and sustainability in mind, LeafByte empowers environmentally-conscious browsing with real-time analytics, intelligent insights, and behavioral nudges.
 
