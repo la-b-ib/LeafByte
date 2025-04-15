@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeafByte Extension</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <h1>LeafByte</h1>
+      <p class="tagline">Track and reduce your carbon footprint while browsing!</p>
+    </header>
+
+    <!-- About Section -->
+    <div class="card about-section">
+      <h2>About the Developer</h2>
+      <p><strong>Developed by:</strong> Labib Bin Shahed</p>
+      <p>Built with care to help you go green while you surf the web.</p>
+    </div>
+
+    <!-- Carbon Footprint Calculation Section -->
+    <div class="card carbon-footprint">
+      <h3>Your Carbon Footprint</h3>
+      <div id="carbonData">
+        <!-- Dynamic carbon footprint data will appear here -->
+      </div>
+    </div>
+
+    <!-- Theme Toggle Section -->
+    <div class="card theme-toggle">
+      <button id="toggleTheme" class="btn" onclick="toggleTheme()">Toggle Dark/Light Theme</button>
+    </div>
+
+    <!-- Notification Settings Section -->
+    <div class="card notifications-section">
+      <h3>Notification Settings</h3>
+      <label for="notificationsToggle" class="toggle-label">Enable Notifications:</label>
+      <input type="checkbox" id="notificationsToggle" class="toggle-checkbox" onclick="toggleNotifications(this.checked)">
+    </div>
+
+    <!-- Accent Color Customization Section -->
+    <div class="card accent-color">
+      <h3>Customize Accent Color</h3>
+      <input type="color" id="colorPicker" value="#4CAF50" class="color-picker" onchange="updateAccentColor(this.value)">
+    </div>
+
+    <!-- Feedback Section -->
+    <div class="card feedback-section">
+      <button class="btn" onclick="showAlert('Thank you for your feedback!')">Send Feedback</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <p>&copy; 2025 LeafByte. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
