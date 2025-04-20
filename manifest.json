@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "LeafByte",
+  "version": "4.1",
+  "description": "The ultimate digital carbon footprint tracker",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "idle",
+    "webNavigation",
+    "webRequest",
+    "downloads"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "leafbyte.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com"
+  }
+}
