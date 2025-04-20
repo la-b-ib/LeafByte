@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeafByte Carbon Tracker</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
+  <style>
+    :root {
+      --primary: #10B981;
+      --primary-dark: #059669;
+      --primary-light: #D1FAE5;
+      --primary-extra-light: #ECFDF5;
+      --background: #FFFFFF;
+      --surface: #F9FAFB;
+      --surface-elevated: #FFFFFF;
+      --border: #E5E7EB;
+      --text-primary: #111827;
+      --text-secondary: #6B7280;
+      --text-on-primary: #FFFFFF;
+      --error: #EF4444;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-full: 9999px;
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="dark"] {
+      --primary: #10B981;
+      --primary-dark: #059669;
+      --primary-light: #064E3B;
+      --primary-extra-light: #022C22;
+      --background: #111827;
+      --surface: #1F2937;
+      --surface-elevated: #374151;
+      --border: #4B5563;
+      --text-primary: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --text-on-primary: #FFFFFF;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.2);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
+      width: 380px;
+      min-height: 520px;
+      padding: 0;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: var(--primary);
+      color: var(--text-on-primary);
+      padding: 18px 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-content {
+      max-width: 280px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .header h1 {
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .header p {
+      font-size: 0.8rem;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      color: var(--text-on-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.25);
+      transform: scale(1.05);
+    }
+
+    .header-icon {
+      font-size: 1.4rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 16px;
+      margin: 16px;
+      border-radius: var(--radius-md);
+    }
+
+    .stat-card {
+      background: var(--surface-elevated);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+
+    .stat-icon {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      background: var(--primary-extra-light);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover .stat-icon {
+      transform: scale(1.1);
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 4px 0;
+      color: var(--text-primary);
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .chart-section {
+      margin: 0 16px 16px;
+    }
+
+    .chart-container {
+      height: 200px;
+      background: var(--surface-elevated);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .chart-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .chart-tab {
+      flex: 1;
+      padding: 8px 10px;
+      border: none;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+      letter-spacing: 0.3px;
+    }
+
+    .chart-tab.active {
+      background: var(--primary);
+      color: var(--text-on-primary);
+      border-color: var(--primary-dark);
+    }
+
+    .chart-tab:not(.active):hover {
+      background: var(--background);
+      color: var(--text-primary);
+    }
+
+    .eco-tip {
+      background: var(--surface-elevated);
+      margin: 0 16px 16px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .eco-tip-icon {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      color: var(--primary);
+      background: var(--primary-extra-light);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+    }
+
+    .eco-tip-content {
+      padding-left: 42px;
+    }
+
+    .eco-tip h3 {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .eco-tip p {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .next-tip {
+      display: block;
+      text-align: right;
+      margin-top: 8px;
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: var(--transition);
+    }
+
+    .next-tip:hover {
+      color: var(--primary-dark);
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 0 16px 16px;
+      margin-top: 4px;
+    }
+
+    .action-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--surface-elevated);
+      border: none;
+      padding: 12px 6px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      color: var(--text-primary);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      background: var(--background);
+      border-color: var(--primary-light);
+    }
+
+    .action-btn i {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .action-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 12px 16px 16px;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      margin-top: auto;
+    }
+
+    .spacer {
+      flex-grow: 1;
+    }
+
+    /* Loading state */
+    .skeleton {
+      background: linear-gradient(90deg, var(--surface) 25%, var(--background) 50%, var(--surface) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: var(--radius-sm);
+      color: transparent !important;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Error states */
+    .error-state {
+      color: var(--error);
+      text-align: center;
+      padding: 16px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 400px) {
+      body {
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="material-icons-round">brightness_4</i>
+      </button>
+      <h1>
+        <i class="material-icons-round header-icon">eco</i>
+        LeafByte
+      </h1>
+      <p>Your digital carbon footprint tracker</p>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="material-icons-round">data_usage</i>
+      </div>
+      <div class="stat-value" id="todayData">0 MB</div>
+      <div class="stat-label">Data Used</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="material-icons-round">co2</i>
+      </div>
+      <div class="stat-value" id="todayCO2">0 kg</div>
+      <div class="stat-label">CO2 Emissions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="material-icons-round">directions_car</i>
+      </div>
+      <div class="stat-value" id="carKm">0 km</div>
+      <div class="stat-label">Car Equivalent</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="material-icons-round">park</i>
+      </div>
+      <div class="stat-value" id="treeDays">0</div>
+      <div class="stat-label">Trees Needed</div>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-tabs">
+      <button class="chart-tab active" data-chart="doughnut">Doughnut</button>
+      <button class="chart-tab" data-chart="bar">Bar</button>
+      <button class="chart-tab" data-chart="line">Line</button>
+    </div>
+    <div class="chart-container">
+      <canvas id="mainChart"></canvas>
+    </div>
+  </div>
+
+  <div class="eco-tip">
+    <div class="eco-tip-icon">
+      <i class="material-icons-round">eco</i>
+    </div>
+    <div class="eco-tip-content">
+      <h3>ECO TIP</h3>
+      <p id="currentTip">Stream videos at lower resolutions to reduce data usage by up to 70%</p>
+      <button class="next-tip" id="nextTip" aria-label="Next tip">Next Tip →</button>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="actions">
+    <button class="action-btn" id="exportBtn" aria-label="Export data">
+      <i class="material-icons-round">save_alt</i>
+      <span class="action-label">Export</span>
+    </button>
+    <button class="action-btn" id="offsetBtn" aria-label="Offset carbon">
+      <i class="material-icons-round">nature</i>
+      <span class="action-label">Offset</span>
+    </button>
+    <button class="action-btn" id="insightsBtn" aria-label="View insights">
+      <i class="material-icons-round">insights</i>
+      <span class="action-label">Insights</span>
+    </button>
+    <button class="action-btn" id="goalsBtn" aria-label="Set goals">
+      <i class="material-icons-round">flag</i>
+      <span class="action-label">Goals</span>
+    </button>
+    <button class="action-btn" id="historyBtn" aria-label="View history">
+      <i class="material-icons-round">history</i>
+      <span class="action-label">History</span>
+    </button>
+    <button class="action-btn" id="settingsBtn" aria-label="Open settings">
+      <i class="material-icons-round">settings</i>
+      <span class="action-label">Settings</span>
+    </button>
+  </div>
+
+  <div class="footer">
+    LeafByte v4.3 | Making the web more sustainable
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+  <script src="leafbyte.js" defer></script>
+</body>
+</html>
