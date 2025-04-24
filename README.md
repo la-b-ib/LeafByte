@@ -221,11 +221,7 @@ npm run lint  # ESLint + Stylelint
 - Advanced visualizations
 - Machine learning models
 
-##  License
 
-MIT License - See [LICENSE](LICENSE) for details.
-
----
 
 ## Contribution Guidelines
 
@@ -306,5 +302,11 @@ LeafByte includes the following security measures:
 - **Developer**: Labib Bin Shahed
 - **Email**: [labib-x@protonmail.com](mailto:labib-x@protonmail.com)  
 - **GitHub**: [github.com/la-b-ib](https://github.com/la-b-ib)
+
+---
+
+##  License
+
+MIT License - See [LICENSE](LICENSE) for details.
 
 ---
