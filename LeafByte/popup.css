@@ -1,0 +1,687 @@
+/* LeafByte Popup Dashboard Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  width: 400px;
+  background: #f6f8f9;
+  border-radius: 8px;                /* optional: smooth edges */
+  min-height: 500px;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 600px;
+}
+
+/* Header */
+.dashboard-header {
+  background: 	#006A4E;
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.logo h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.current-emissions {
+  text-align: right;
+}
+
+.current-value {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.current-unit {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Navigation */
+.tab-navigation {
+  display: flex;
+  background: transparent; /*ransparent version 
+  backdrop-filter: blur(10px);       /* applies blur to background behind the element */
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+  border-bottom: 1px solid #e0e0e0;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.tab-btn.active {
+  color: 	#006A4E;
+  border-bottom-color: 	#006A4E;
+  background: #f8fff8;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Current Page */
+.current-page {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.current-page h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.page-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.page-url {
+  font-size: 13px;
+  color: #666;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-emissions {
+  text-align: right;
+}
+
+.page-co2 {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.page-status {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.page-status.low {
+  background: #e8f5e8;
+  color: #006A4E;
+}
+
+.page-status.medium {
+  background: #fff3e0;
+  color: #FF9800;
+}
+
+.page-status.high {
+  background: #ffebee;
+  color: #F44336;
+}
+
+.resource-breakdown {
+  height: 200px;
+  position: relative;
+}
+
+/* Eco Tips */
+.eco-tips {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.eco-tips h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.tip-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tip-item {
+  background: #f8fff8;
+  border-left: 3px solid 	#006A4E;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Sites Tab */
+.sites-overview {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sites-overview h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-controls select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  background: white;
+}
+
+.sites-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.site-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.site-item:last-child {
+  border-bottom: none;
+}
+
+.site-info {
+  flex: 1;
+}
+
+.site-domain {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.site-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.site-visits {
+  color: #666;
+}
+
+.site-emissions {
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.site-emissions.low {
+  background: #e8f5e8;
+  color: #006A4E;
+}
+
+.site-emissions.medium {
+  background: #fff3e0;
+  color: #FF9800;
+}
+
+.site-emissions.high {
+  background: #ffebee;
+  color: #F44336;
+}
+
+.site-total {
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
+
+.no-data {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Trends Tab */
+.trends-overview {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trends-overview h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.chart-container {
+  height: 200px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.trend-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.trend-item {
+  text-align: center;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.trend-label {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trend-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Goals Tab */
+.goals-overview {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.goals-overview h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.goal-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.goal-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.goal-target {
+  font-size: 12px;
+  color: #666;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: 	#006A4E;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.goal-status {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* Gamification */
+.gamification {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.gamification h4 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.level-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.level-text, .points-text {
+  font-size: 13px;
+  color: #333;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 60px;
+  transition: all 0.2s ease;
+}
+
+.badge.earned {
+  background: #e8f5e8;
+  border: 1px solid 	#006A4E;
+}
+
+.badge.locked {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  opacity: 0.6;
+}
+
+.badge-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.badge-name {
+  font-size: 10px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Footer */
+.dashboard-footer {
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 12px 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background:	#006A4E;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: 	#006A4E;
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive Design */
+@media (max-width: 350px) {
+  body {
+    width: 320px;
+  }
+  
+  .dashboard-header {
+    padding: 12px 16px;
+  }
+  
+  .tab-content {
+    padding: 12px 16px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .trend-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  .dashboard-header {
+    background: linear-gradient(135deg, #2d5a2d, #245a24);
+  }
+  
+  .tab-navigation {
+    background: #2d2d2d;
+    border-bottom-color: #404040;
+  }
+  
+  .tab-btn {
+    color: #b0b0b0;
+  }
+  
+  .tab-btn:hover {
+    background: #3d3d3d;
+    color: #e0e0e0;
+  }
+  
+  .tab-btn.active {
+    background: #2d3d2d;
+    color: #006A4E;
+  }
+  
+  .stat-card,
+  .current-page,
+  .eco-tips,
+  .sites-overview,
+  .trends-overview,
+  .goals-overview {
+    background: #2d2d2d;
+    color: #e0e0e0;
+  }
+  
+  .goal-card,
+  .gamification {
+    background: #3d3d3d;
+  }
+  
+  .dashboard-footer {
+    background: #2d2d2d;
+    border-top-color: #404040;
+  }
+  
+  .btn-secondary {
+    background: #3d3d3d;
+    color: #e0e0e0;
+    border-color: #555;
+  }
+  
+  .filter-controls select {
+    background: #3d3d3d;
+    color: #e0e0e0;
+    border-color: #555;
+  }
+}
