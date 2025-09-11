@@ -10,7 +10,7 @@ Thank you for your interest in contributing to **LeafByte** — a Chrome extensi
 
 2. **Clone Your Fork**
    ```bash
-   git clone https://github.com/your-username/LeafByte.git
+   git clone https://github.com/la-b-ib/LeafByte.git
    cd LeafByte
    ```
 
