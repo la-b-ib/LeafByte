@@ -1,98 +1,71 @@
+# 🔐 LeafByte Security Policy
 
-# Security Policy
+LeafByte is committed to maintaining the highest standards of security and user privacy. This policy outlines our approach to safeguarding user data, preventing vulnerabilities, and responding to security issues.
 
-LeafByte is committed to maintaining a secure and eco-conscious experience for all users. We prioritize the protection of user data and the integrity of our extension by adhering to strict security standards. This policy outlines guidelines for reporting vulnerabilities and the measures we implement to ensure security.
+## 🛡️ Guiding Principles
 
----
+- **Privacy-First Design**: All data is stored locally unless explicitly synced by the user.
+- **Minimal Permissions**: LeafByte only requests permissions essential for functionality.
+- **No External Tracking**: We do not transmit or sell user data to third parties.
+- **Transparency**: All code is open-source and auditable via GitHub.
 
-## Supported Versions
+## 🔍 Data Handling & Storage
 
-We actively maintain the latest version of LeafByte. Please ensure that your extension is updated to avoid known vulnerabilities. The following versions are supported:
-- Latest stable release (actively maintained)
-- Beta releases (for testing)
+- **Local Storage**: Emission data, settings, and achievements are stored locally on the user's device.
+- **Sync Storage (Optional)**: Settings can be synced across devices using Chrome Sync.
+- **No External APIs**: LeafByte does not send browsing data to external servers.
+- **Data Retention Control**: Users can configure how long emission history is retained.
 
-We recommend updating your browser and operating system to their latest versions for optimal compatibility and security.
+## 🔐 Permissions Overview
 
----
+LeafByte uses the following Chrome extension permissions:
 
-## Reporting a Vulnerability
+| Permission              | Purpose                                                                 |
+|------------------------|-------------------------------------------------------------------------|
+| `storage`              | Save user settings and emission data                                    |
+| `history`              | Access browsing history for retroactive emission calculations           |
+| `tabs`                 | Monitor active tabs for real-time tracking                              |
+| `alarms`               | Schedule periodic data resets                                            |
+| `notifications`        | Display alerts when emission thresholds are exceeded                    |
+| `declarativeNetRequest`| Optional ad blocking and resource filtering                             |
 
-If you discover a security vulnerability, please report it responsibly using the guidelines below:
-1. **Email Contact:**  
-   Send an email to `security@leafbyte.org` with the subject line: `Vulnerability Report: [Short Description]`.
+All permissions are used strictly for their described purposes and never abused for tracking or profiling.
 
-2. **Details to Include:**
-   - A concise description of the vulnerability.
-   - Steps to reproduce the issue.
-   - Screenshots or logs (if applicable).
-   - Your browser and operating system details.
+## 🧪 Security Testing & Audit
 
-3. **Response Timeline:**
-   - We will acknowledge your report within **24 hours**.
-   - If verified, a fix will be deployed within **5 business days**.
+- **Audit Mode**: Developers can inspect performance and emissions without compromising user data.
+- **Code Reviews**: All pull requests are reviewed for security implications.
+- **Static Analysis**: Automated tools are used to detect vulnerabilities in JavaScript and manifest files.
+- **Dependency Monitoring**: Third-party libraries are regularly scanned for known CVEs.
 
-LeafByte requests responsible disclosure to allow for adequate time to resolve vulnerabilities before public sharing.
+## 🚨 Reporting Vulnerabilities
 
----
+We take security seriously. If you discover a vulnerability, please report it responsibly:
 
-## Security Features
+- **GitHub Issues**: Tag your report with `security` and mark it as confidential if needed
 
-LeafByte includes the following protections:
-- **Local Data Encryption:**  
-  All user data is securely stored in encrypted local storage.
+We aim to respond to all security reports within **72 hours** and resolve critical issues within **7 days**.
 
-- **CSP Enforcement:**  
-  LeafByte uses a Content Security Policy (CSP) to prevent unauthorized scripts or unsafe inline content.
+## 🔄 Updates & Patch Management
 
-- **Permission Minimization:**  
-  The extension uses only the necessary permissions:
-  - `storage` for preferences.
-  - `webRequest` for network data.
-  - `notifications` for eco-tips.
+- **Versioning**: All releases are tagged and documented in the changelog.
+- **Security Patches**: Critical fixes are prioritized and released promptly.
+- **User Notification**: Users are notified of major security updates via extension changelog.
 
-- **Input Validation:**  
-  All user inputs undergo strict validation to prevent malicious entries.
+## 🧑‍💻 Developer Best Practices
 
-- **HTTPS-Only Resource Loading:**  
-  LeafByte exclusively interacts with secure, HTTPS endpoints.
+Contributors must follow these security guidelines:
 
----
+- Avoid using unsafe DOM manipulation
+- Sanitize all user inputs
+- Never include hardcoded secrets or credentials
+- Use HTTPS for any external resources
+- Follow Chrome Extension Content Security Policy (CSP)
 
-## Vulnerability Management
+## 📜 License & Legal
 
-We adhere to industry standards for vulnerability assessment:
-- **Regular Audits:**  
-  Conduct automated and manual code reviews biweekly.
-
-- **Compliance:**  
-  LeafByte is OWASP ASVS Level 2 compliant.
-
-- **Transparency:**  
-  All resolved vulnerabilities are documented in the [Security History](./SECURITY_HISTORY.md) file.
+LeafByte is distributed under the **MIT License**, which includes no warranty. Users and contributors are responsible for ensuring compliance with local data protection laws.
 
 ---
 
-
-
-## Project Documentation
-
-<div style="display: flex; gap: 10px; margin: 15px 0; align-items: center; flex-wrap: wrap;">
-
-[![License](https://img.shields.io/badge/License-See_FILE-007EC7?style=for-the-badge&logo=creativecommons)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-Policy_%7C_Reporting-FF6D00?style=for-the-badge&logo=owasp)](SECURITY.md)
-[![Contributing](https://img.shields.io/badge/Contributing-Guidelines-2E8B57?style=for-the-badge&logo=git)](CONTRIBUTING.md)
-[![Code of Conduct](https://img.shields.io/badge/Code_of_Conduct-Community_Standards-FF0000?style=for-the-badge&logo=opensourceinitiative)](CODE_OF_CONDUCT.md)
-
-</div>
-
-## Contact Information
-
-
-
-  
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:labib.45x@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/la-b-ib)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/la-b-ib/)
-[![Portfolio](https://img.shields.io/badge/Website-0A5C78?style=for-the-badge&logo=internet-explorer&logoColor=white)](https://la-b-ib.github.io/)
-[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/la_b_ib_)
-
+**Your security is our responsibility.** LeafByte is built with care to protect your privacy and promote a safer, greener web.
