@@ -69,3 +69,5 @@ LeafByte is distributed under the **MIT License**, which includes no warranty. U
 ---
 
 **Your security is our responsibility.** LeafByte is built with care to protect your privacy and promote a safer, greener web.
+
+<hr>
