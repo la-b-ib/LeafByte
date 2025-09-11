@@ -1,4 +1,5 @@
-# LeafByte 🌱
+## LeafByte  <a href=""><img align="right" width="150" height="150" src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/icons/leaf.gif"></a>
+
 
 **Making the web more sustainable, one page at a time**
 
