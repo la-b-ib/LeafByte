@@ -42,6 +42,8 @@
 - **Debug Logging**: Console logging for troubleshooting
 - **API Integration**: Green hosting detection via The Green Web Foundation
 
+
+## Preview
 ## Installation
 
 ### From Chrome Web Store (Recommended)
