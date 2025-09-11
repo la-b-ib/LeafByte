@@ -1,8 +1,9 @@
-# LeafByte 🌱
+## LeafByte  <a href=""><img align="right" width="150" height="150" src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/icons/leaf.gif"></a>
 
-**Making the web more sustainable, one page at a time**
 
-LeafByte is a Chrome extension that tracks and displays the carbon emissions of your web browsing, helping you make more environmentally conscious decisions online.
+**Making the web more sustainable, one page at a time.**
+
+**LeafByte is a Chrome extension that tracks and displays the carbon emissions of your web browsing, helping you make more environmentally conscious decisions online.**
 
 ## Features
 
@@ -40,6 +41,21 @@ LeafByte is a Chrome extension that tracks and displays the carbon emissions of 
 - **Optimization Suggestions**: Get recommendations to reduce page emissions
 - **Debug Logging**: Console logging for troubleshooting
 - **API Integration**: Green hosting detection via The Green Web Foundation
+
+
+## Preview
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(1).png" width="45%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(2).png" width="45%" />
+</p>
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(3).png" width="45%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(4).png" width="45%" />
+</p>
+
+
 
 ## Installation
 
@@ -162,35 +178,53 @@ LeafByte/
 ## FAQ
 
 **Q: How accurate are the emission calculations?**
-A: Our calculations are based on industry-standard methodologies and provide good relative comparisons. Absolute values are estimates.
+- A: Our calculations are based on industry-standard methodologies and provide good relative comparisons. Absolute values are estimates.
 
 **Q: Does this extension slow down my browsing?**
-A: No, LeafByte uses lightweight APIs and processes data asynchronously without impacting page load times.
+- A: No, LeafByte uses lightweight APIs and processes data asynchronously without impacting page load times.
 
 **Q: Is my browsing data private?**
-A: Yes, all data is stored locally on your device. We never collect or transmit your browsing information.
+- A: Yes, all data is stored locally on your device. We never collect or transmit your browsing information.
 
 **Q: Can I use this for my website's sustainability audit?**
-A: Yes! Enable "Audit Mode" in settings for detailed developer insights and optimization recommendations.
+- A: Yes! Enable "Audit Mode" in settings for detailed developer insights and optimization recommendations.
 
-## Support
+## Project Documentation
 
-- **Issues**: Report bugs on GitHub Issues
-- **Feature Requests**: Submit ideas via GitHub Discussions
-- **Email**: leafbyte.extension@gmail.com
+<div style="display: flex; gap: 10px; margin: 15px 0; align-items: center; flex-wrap: wrap;">
 
-## License
+[![License](https://img.shields.io/badge/License-See_FILE-007EC7?style=for-the-badge&logo=creativecommons)](LICENSE)
+[![Security](https://img.shields.io/badge/Security-Policy_%7C_Reporting-FF6D00?style=for-the-badge&logo=owasp)](SECURITY.md)
+[![Contributing](https://img.shields.io/badge/Contributing-Guidelines-2E8B57?style=for-the-badge&logo=git)](CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/Code_of_Conduct-Community_Standards-FF0000?style=for-the-badge&logo=opensourceinitiative)](CODE_OF_CONDUCT.md)
 
-MIT License - see LICENSE file for details
+</div>
+
+## Contact Information
+
+
+
+  
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:labib.45x@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/la-b-ib)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/la-b-ib/)
+[![Portfolio](https://img.shields.io/badge/Website-0A5C78?style=for-the-badge&logo=internet-explorer&logoColor=white)](https://la-b-ib.github.io/)
+
+
+
+
+---
+
 
 ## Credits
 
-**Developer**: Labib Bin Shahed
-**Inspiration**: The urgent need for digital sustainability awareness
-**Special Thanks**: The Green Web Foundation for hosting data
+- **Developer**: Labib Bin Shahed
+- **Inspiration**: The urgent need for digital sustainability awareness
+- **Special Thanks**: The Green Web Foundation for hosting data
 
 ---
 
 **Start your sustainable browsing journey today! 🌱**
 
 Every gram of CO2 saved makes a difference. Together, we can make the web more sustainable.
+<hr>
