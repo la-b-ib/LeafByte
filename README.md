@@ -240,7 +240,7 @@ LeafByte/
 
 ---
 
-**Start your sustainable browsing journey today! 🌱**
+**Start your sustainable browsing journey today! 🪴**
 
 Every gram of CO2 saved makes a difference. Together, we can make the web more sustainable.
 <hr>
