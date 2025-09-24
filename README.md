@@ -4,6 +4,7 @@
 **Making the web more sustainable, one page at a time.**
 
 **LeafByte is a Chrome extension that tracks and displays the carbon emissions of your web browsing, helping you make more environmentally conscious decisions online.**
+<hr>
 
 ## Features
 
@@ -42,24 +43,26 @@
 - **Debug Logging**: Console logging for troubleshooting
 - **API Integration**: Green hosting detection via The Green Web Foundation
 
+<hr>
 
 ## Preview
 
 
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop.png" width="48%" />
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(1).png" width="48%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop.png" width="49%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(1).png" width="49%" />
 </p>
 <p align="left">
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(2).png" width="48%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(2).png" width="49%" />
   <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(3).png" width="48%" />
 </p>
 <p align="left">
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(4).png" width="48%" />
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(5).png" width="48%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(4).png" width="49%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(5).png" width="49%" />
 </p>
 
+<hr>
 
 ## Installation
 
@@ -75,6 +78,8 @@
 3. Enable "Developer mode" in the top right
 4. Click "Load unpacked" and select the LeafByte folder
 5. The extension will appear in your toolbar
+   
+<hr>
 
 ## How It Works
 
@@ -90,6 +95,7 @@ LeafByte uses the Performance API to measure:
 - **Global Average**: 475g CO2/kWh
 - **Energy Factor**: 0.5 kWh per GB of data
 - **Green Hosting Bonus**: 50% reduction for renewable-powered sites
+<hr>
 
 ## Usage
 
@@ -111,6 +117,7 @@ LeafByte uses the Performance API to measure:
 2. Configure your location for accurate carbon intensity
 3. Set emission thresholds and notification preferences
 4. Customize display options and privacy settings
+<hr>
 
 ## Technical Details
 
@@ -131,6 +138,7 @@ LeafByte uses the Performance API to measure:
 - **Local Storage**: Emission data, settings, achievements
 - **Sync Storage**: Settings only (if enabled)
 - **No External APIs**: All processing done locally
+<hr>
 
 ## Contributing
 
@@ -164,6 +172,7 @@ LeafByte/
 - **Chrome History API**: Browsing history integration
 - **Chrome Alarms API**: Scheduled tasks
 - **Chrome Notifications API**: User alerts
+<hr>
 
 ## Roadmap
 
@@ -178,6 +187,7 @@ LeafByte/
 - [ ] Website sustainability scoring
 - [ ] Integration with sustainability APIs
 - [ ] Mobile companion app
+<hr>
 
 ## FAQ
 
@@ -192,6 +202,7 @@ LeafByte/
 
 **Q: Can I use this for my website's sustainability audit?**
 - A: Yes! Enable "Audit Mode" in settings for detailed developer insights and optimization recommendations.
+<hr>
 
 ## Project Documentation
 
@@ -203,6 +214,7 @@ LeafByte/
 [![Code of Conduct](https://img.shields.io/badge/Code_of_Conduct-Community_Standards-FF0000?style=for-the-badge&logo=opensourceinitiative)](CODE_OF_CONDUCT.md)
 
 </div>
+<hr>
 
 ## Contact Information
 
