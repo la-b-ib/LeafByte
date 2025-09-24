@@ -45,16 +45,20 @@
 
 ## Preview
 
-<p align="left">
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(1).png" width="45%" />
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(2).png" width="45%" />
-</p>
+
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(3).png" width="45%" />
-  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(4).png" width="45%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop.png" width="48%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(1).png" width="48%" />
 </p>
-
+<p align="left">
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(2).png" width="48%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(3).png" width="48%" />
+</p>
+<p align="left">
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(4).png" width="48%" />
+  <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/preview/desktop%20(5).png" width="48%" />
+</p>
 
 
 ## Installation
