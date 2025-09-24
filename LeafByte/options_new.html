@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafByte Settings</title>
+    <link rel="stylesheet" href="options_new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Modern Top Bar -->
+        <header class="top-bar">
+            <div class="container">
+                <div class="brand">
+                    <div class="logo">
+                        <img src="icons/icon32.svg" alt="LeafByte">
+                    </div>
+                    <div class="brand-text">
+                        <h1>LeafByte</h1>
+                        <span class="subtitle">Settings</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-secondary" data-action="export">Export Data</button>
+                    <button class="btn-primary" data-action="save">Save Changes</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Modern Sidebar Layout -->
+        <div class="layout">
+            <nav class="sidebar">
+                <div class="nav-list">
+                    <button class="nav-item active" data-section="general">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-label">General</span>
+                    </button>
+                    <button class="nav-item" data-section="appearance">
+                        <span class="nav-icon">🎨</span>
+                        <span class="nav-label">Appearance</span>
+                    </button>
+                    <button class="nav-item" data-section="tracking">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-label">Tracking</span>
+                    </button>
+                    <button class="nav-item" data-section="notifications">
+                        <span class="nav-icon">🔔</span>
+                        <span class="nav-label">Notifications</span>
+                    </button>
+                    <button class="nav-item" data-section="privacy">
+                        <span class="nav-icon">🔒</span>
+                        <span class="nav-label">Privacy</span>
+                    </button>
+                    <button class="nav-item" data-section="advanced">
+                        <span class="nav-icon">🔧</span>
+                        <span class="nav-label">Advanced</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="content-header">
+                    <h2 id="section-title">General Settings</h2>
+                    <p id="section-description">Basic configuration options</p>
+                </div>
+
+                <!-- General Settings -->
+                <section id="general-section" class="section active">
+                    <div class="settings-list">
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Show Badge</label>
+                                <span class="setting-description">Display carbon footprint badge on websites</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked data-setting="showBadge">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Badge Position</label>
+                                <span class="setting-description">Where to display the badge on pages</span>
+                            </div>
+                            <div class="setting-control">
+                                <select class="select" data-setting="badgePosition">
+                                    <option value="top-right">Top Right</option>
+                                    <option value="top-left">Top Left</option>
+                                    <option value="bottom-right">Bottom Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Theme</label>
+                                <span class="setting-description">Choose your preferred appearance</span>
+                            </div>
+                            <div class="setting-control">
+                                <div class="segmented-control">
+                                    <input type="radio" id="theme-light" name="theme" value="light" data-setting="theme" checked>
+                                    <label for="theme-light">Light</label>
+                                    <input type="radio" id="theme-dark" name="theme" value="dark" data-setting="theme">
+                                    <label for="theme-dark">Dark</label>
+                                    <input type="radio" id="theme-auto" name="theme" value="auto" data-setting="theme">
+                                    <label for="theme-auto">Auto</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Units</label>
+                                <span class="setting-description">How to display carbon emissions</span>
+                            </div>
+                            <div class="setting-control">
+                                <select class="select" data-setting="units">
+                                    <option value="g">Grams (g CO₂)</option>
+                                    <option value="kg">Kilograms (kg CO₂)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Appearance Settings -->
+                <section id="appearance-section" class="section">
+                    <div class="settings-list">
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Compact Mode</label>
+                                <span class="setting-description">Use smaller badge size</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="compactMode">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Animations</label>
+                                <span class="setting-description">Enable smooth animations</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked data-setting="animations">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Badge Opacity</label>
+                                <span class="setting-description">Transparency level of the badge</span>
+                            </div>
+                            <div class="setting-control">
+                                <div class="slider-container">
+                                    <input type="range" class="range-slider" min="0.3" max="1" step="0.1" value="0.9" data-setting="opacity">
+                                    <div class="range-labels">
+                                        <span>30%</span>
+                                        <span>100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tracking Settings -->
+                <section id="tracking-section" class="section">
+                    <div class="settings-list">
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Auto Calculate</label>
+                                <span class="setting-description">Automatically track emissions for visited sites</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked data-setting="autoCalculate">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Update Frequency</label>
+                                <span class="setting-description">How often to refresh calculations (seconds)</span>
+                            </div>
+                            <div class="setting-control">
+                                <input type="number" class="number-input" min="1" max="60" value="5" data-setting="updateFrequency">
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Green Hosting Detection</label>
+                                <span class="setting-description">Check if websites use green energy</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked data-setting="greenHosting">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notifications Settings -->
+                <section id="notifications-section" class="section">
+                    <div class="settings-list">
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Enable Notifications</label>
+                                <span class="setting-description">Show notifications for high emissions</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="notifications">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Threshold</label>
+                                <span class="setting-description">Notify when emissions exceed (g CO₂)</span>
+                            </div>
+                            <div class="setting-control">
+                                <input type="number" class="number-input" min="10" max="1000" value="100" data-setting="threshold">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Privacy Settings -->
+                <section id="privacy-section" class="section">
+                    <div class="settings-list">
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Store History</label>
+                                <span class="setting-description">Keep track of your browsing emissions</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked data-setting="storeHistory">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Data Retention</label>
+                                <span class="setting-description">How long to keep history data (days)</span>
+                            </div>
+                            <div class="setting-control">
+                                <select class="select" data-setting="dataRetention">
+                                    <option value="7">1 Week</option>
+                                    <option value="30">1 Month</option>
+                                    <option value="90" selected>3 Months</option>
+                                    <option value="365">1 Year</option>
+                                    <option value="0">Forever</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advanced Settings -->
+                <section id="advanced-section" class="section">
+                    <div class="settings-list">
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Debug Mode</label>
+                                <span class="setting-description">Show detailed emission calculations</span>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" data-setting="debugMode">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting">
+                            <div class="setting-info">
+                                <label class="setting-label">Custom API Endpoint</label>
+                                <span class="setting-description">Override default emissions data source</span>
+                            </div>
+                            <div class="setting-control">
+                                <input type="url" class="text-input" placeholder="https://api.example.com" data-setting="customApi">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

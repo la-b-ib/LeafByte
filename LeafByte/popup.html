@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeafByte Dashboard</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <script src="chart.min.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="https://raw.githubusercontent.com/la-b-ib/LeafByte/main/icons/farmer.png" alt="LeafByte Logo" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <h1>LeafByte</h1>
+          <span class="tagline">Carbon Tracker</span>
+        </div>
+      </div>
+      <div class="current-emissions">
+        <div class="emission-value">
+          <span class="current-value" id="currentEmissions">0.0</span>
+          <span class="current-unit">g CO₂e</span>
+        </div>
+        <div class="emission-status" id="emissionStatus">Real-time</div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-navigation">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="sites">Sites</button>
+      <button class="tab-btn" data-tab="trends">Trends</button>
+      <button class="tab-btn" data-tab="goals">Goals</button>
+    </nav>
+
+    <!-- Overview Tab -->
+    <div class="tab-content active" id="overview">
+      <!-- Quick Stats -->
+      <section class="quick-stats">
+        <div class="stat-card today">
+          <div class="stat-icon">
+            <span class="material-icons-round">today</span>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="todayEmissions">0.0g</span>
+            <span class="stat-label">Today</span>
+          </div>
+          <div class="stat-trend up">
+            <span class="material-icons-round">trending_up</span>
+          </div>
+        </div>
+        <div class="stat-card week">
+          <div class="stat-icon">
+            <span class="material-icons-round">calendar_view_week</span>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="weekEmissions">0.0g</span>
+            <span class="stat-label">This Week</span>
+          </div>
+          <div class="stat-trend down">
+            <span class="material-icons-round">trending_down</span>
+          </div>
+        </div>
+        <div class="stat-card level">
+          <div class="stat-icon">
+            <span class="material-icons-round">emoji_events</span>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="userLevel">1</span>
+            <span class="stat-label">Level</span>
+          </div>
+          <div class="stat-progress">
+            <div class="progress-ring"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Current Page Analysis -->
+      <section class="current-page">
+        <div class="section-header">
+          <h3><span class="material-icons-round">analytics</span> Current Page Analysis</h3>
+          <button class="refresh-btn" id="refreshPage">
+            <span class="material-icons-round">refresh</span>
+          </button>
+        </div>
+        <div class="page-info">
+          <div class="page-details">
+            <div class="page-url" id="currentPageUrl">Loading...</div>
+            <div class="page-meta">
+              <span class="load-time" id="loadTime">0.0s</span>
+              <span class="page-size" id="pageSize">0 KB</span>
+            </div>
+          </div>
+          <div class="page-emissions">
+            <span class="page-co2" id="pageEmissions">0.0g CO₂e</span>
+            <span class="page-status low" id="pageStatus">Low Impact</span>
+          </div>
+        </div>
+        <div class="resource-breakdown">
+          <canvas id="resourceChart" width="300" height="200"></canvas>
+        </div>
+      </section>
+
+      <!-- Eco Tips -->
+      <section class="eco-tips">
+        <h3><span class="material-icons-round">eco</span> Eco Tips</h3>
+        <div class="tip-container" id="ecoTips">
+          <div class="tip-item">
+            <div class="tip-icon">💡</div>
+            <div class="tip-content">Loading tips...</div>
+          </div>
+        </div>
+        <button class="next-tip-btn" id="nextTipBtn">
+          <span class="material-icons-round">arrow_forward</span>
+        </button>
+      </section>
+    </div>
+
+    <!-- Sites Tab -->
+    <div class="tab-content" id="sites">
+      <div class="sites-container">
+        <!-- Header Section -->
+        <div class="sites-header">
+          <h3>
+            <span class="material-icons-round">public</span>
+            Visited Sites
+          </h3>
+          <div class="sites-stats">
+            <span class="stats-item">
+              <span class="stats-number" id="totalSites">0</span>
+              <span class="stats-label">Sites</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <select class="filter-select" id="emissionFilter">
+            <option value="all">All Sites</option>
+            <option value="high">High Impact</option>
+            <option value="medium">Medium Impact</option>
+            <option value="low">Low Impact</option>
+          </select>
+          <select class="filter-select" id="sortBy">
+            <option value="emissions">Sort by Emissions</option>
+            <option value="visits">Sort by Visits</option>
+            <option value="alphabetical">Sort Alphabetically</option>
+          </select>
+        </div>
+
+        <!-- Sites Grid -->
+        <div class="sites-grid" id="sites-grid">
+          <!-- Site cards will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Trends Tab -->
+    <div class="tab-content" id="trends">
+      <section class="trends-overview">
+        <h3>Emission Trends</h3>
+        <div class="chart-container">
+          <canvas id="trendsChart" width="350" height="200"></canvas>
+        </div>
+        <div class="trend-stats">
+          <div class="trend-item">
+            <span class="trend-label">7-day average:</span>
+            <span class="trend-value" id="weeklyAverage">0.0g</span>
+          </div>
+          <div class="trend-item">
+            <span class="trend-label">Best day:</span>
+            <span class="trend-value" id="bestDay">0.0g</span>
+          </div>
+          <div class="trend-item">
+            <span class="trend-label">Total saved:</span>
+            <span class="trend-value" id="totalSaved">0.0g</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Goals Tab -->
+    <div class="tab-content" id="goals">
+      <section class="goals-overview">
+        <h3>Your Goals</h3>
+        
+        <!-- Daily Goal -->
+        <div class="goal-card">
+          <div class="goal-header">
+            <span class="goal-title">Daily Goal</span>
+            <span class="goal-target" id="dailyGoalTarget">20g CO₂e</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="dailyProgress"></div>
+          </div>
+          <div class="goal-status" id="dailyGoalStatus">On track</div>
+        </div>
+
+        <!-- Weekly Goal -->
+        <div class="goal-card">
+          <div class="goal-header">
+            <span class="goal-title">Weekly Goal</span>
+            <span class="goal-target" id="weeklyGoalTarget">140g CO₂e</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="weeklyProgress"></div>
+          </div>
+          <div class="goal-status" id="weeklyGoalStatus">On track</div>
+        </div>
+
+        <!-- Gamification -->
+        <div class="gamification">
+          <h4><span class="material-icons-round">military_tech</span> Achievements</h4>
+          <div class="level-info">
+            <div class="level-display">
+              <span class="level-text">Level <span id="currentLevel">1</span></span>
+              <span class="points-text"><span id="currentPoints">0</span> points</span>
+            </div>
+            <div class="level-avatar">
+              <span class="material-icons-round">person</span>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="levelProgress"></div>
+          </div>
+          <div class="badges" id="badgesList">
+            <!-- Badges will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer Actions -->
+    <footer class="dashboard-footer">
+      <div class="action-buttons">
+        <button class="btn btn-secondary" id="exportBtn">
+          <span class="material-icons-round">download</span>
+          Export
+        </button>
+        <button class="btn btn-secondary" id="settingsBtn">
+          <span class="material-icons-round">settings</span>
+          Settings
+        </button>
+        <button class="btn btn-primary" id="refreshBtn">
+          <span class="material-icons-round">refresh</span>
+          Refresh
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+/* LeafByte Modern Content Script Styles */
+
+:root {
+  /* Match the modern design system from popup */
+  --primary-color: #00A86B;
+  --primary-gradient: linear-gradient(135deg, #00A86B 0%, #006A4E 100%);
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --transition-base: 200ms ease-out;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.leafbyte-badge {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2147483647;
+  font-family: var(--font-family);
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-base);
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.leafbyte-badge:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.leafbyte-badge-content {
+  display: flex;
+  align-items: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  padding: 12px 16px;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.leafbyte-badge-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transition: all var(--transition-base);
+}
+
+.leafbyte-badge-content.low-emission {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.leafbyte-badge-content.low-emission::before {
+  background: var(--success-color);
+}
+
+.leafbyte-badge-content.medium-emission {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.leafbyte-badge-content.medium-emission::before {
+  background: var(--warning-color);
+}
+
+.leafbyte-badge-content.high-emission {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.leafbyte-badge-content.high-emission::before {
+  background: var(--danger-color);
+}
+
+.leafbyte-badge:hover .leafbyte-badge-content {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.leafbyte-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  animation: gentlePulse 3s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 168, 107, 0.1);
+  color: var(--primary-color);
+}
+
+@keyframes gentlePulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.leafbyte-emissions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.leafbyte-value {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.leafbyte-unit {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leafbyte-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leafbyte-status.low {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+}
+
+.leafbyte-status.medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--warning-color);
+}
+
+.leafbyte-status.high {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--danger-color);
+}
+
+.leafbyte-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 12px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 20px;
+  min-width: 300px;
+  max-width: 360px;
+  display: none;
+  z-index: 2147483648;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: tooltipSlideIn 0.3s ease-out;
+}
+
+@keyframes tooltipSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.leafbyte-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 24px;
+  width: 12px;
+  height: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(45deg);
+  backdrop-filter: blur(20px);
+}
+
+.leafbyte-tooltip-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leafbyte-tooltip-title::before {
+  content: '🌱';
+  font-size: 18px;
+}
+
+.leafbyte-tooltip-content {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.leafbyte-breakdown {
+  background: rgba(248, 250, 252, 0.5);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.leafbyte-breakdown-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leafbyte-breakdown-title::before {
+  content: '📊';
+  font-size: 16px;
+}
+
+.leafbyte-breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+}
+
+.leafbyte-breakdown-item:last-child {
+  border-bottom: none;
+}
+
+.leafbyte-breakdown-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.leafbyte-breakdown-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 2px 8px;
+  background: rgba(0, 168, 107, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.leafbyte-tip {
+  background: rgba(0, 168, 107, 0.05);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 12px 16px;
+  margin-top: 16px;
+}
+
+.leafbyte-tip-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.leafbyte-tip-title::before {
+  content: '💡';
+  font-size: 14px;
+}
+
+.leafbyte-tip-content {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Position variants */
+.leafbyte-badge.top-left {
+  top: 20px;
+  left: 20px;
+  right: auto;
+}
+
+.leafbyte-badge.top-left .leafbyte-tooltip {
+  right: auto;
+  left: 0;
+}
+
+.leafbyte-badge.top-left .leafbyte-tooltip::before {
+  left: 24px;
+  right: auto;
+}
+
+.leafbyte-badge.bottom-right {
+  bottom: 20px;
+  top: auto;
+  right: 20px;
+}
+
+.leafbyte-badge.bottom-right .leafbyte-tooltip {
+  bottom: 100%;
+  top: auto;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.leafbyte-badge.bottom-right .leafbyte-tooltip::before {
+  top: auto;
+  bottom: -6px;
+  transform: rotate(225deg);
+}
+
+.leafbyte-badge.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  top: auto;
+  right: auto;
+}
+
+.leafbyte-badge.bottom-left .leafbyte-tooltip {
+  bottom: 100%;
+  top: auto;
+  right: auto;
+  left: 0;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.leafbyte-badge.bottom-left .leafbyte-tooltip::before {
+  top: auto;
+  bottom: -6px;
+  left: 24px;
+  right: auto;
+  transform: rotate(225deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .leafbyte-badge {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .leafbyte-badge-content {
+    padding: 8px 12px;
+  }
+  
+  .leafbyte-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+  
+  .leafbyte-value {
+    font-size: 14px;
+  }
+  
+  .leafbyte-tooltip {
+    min-width: 250px;
+    max-width: calc(100vw - 40px);
+    padding: 16px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --glass-bg: rgba(30, 41, 59, 0.85);
+    --glass-border: rgba(100, 116, 139, 0.2);
+  }
+  
+  .leafbyte-tooltip::before {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+  }
+  
+  .leafbyte-breakdown {
+    background: rgba(51, 65, 85, 0.3);
+  }
+  
+  .leafbyte-tip {
+    background: rgba(0, 168, 107, 0.1);
+  }
+}
+
+.leafbyte-tips {
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.leafbyte-tip {
+  color: #006A4E;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .leafbyte-badge {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .leafbyte-badge-content {
+    padding: 6px 10px;
+  }
+  
+  .leafbyte-icon {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+  
+  .leafbyte-value {
+    font-size: 12px;
+  }
+
+
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .leafbyte-badge-content {
+    border-width: 3px;
+    background: white;
+  }
+  
+  .leafbyte-tooltip {
+    border-width: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .leafbyte-badge {
+    transition: none;
+  }
+  
+  .leafbyte-badge:hover {
+    transform: none;
+  }
+  
+  .leafbyte-icon {
+    animation: none;
+  }
+  
+  .leafbyte-badge-content {
+    transition: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .leafbyte-badge {
+    display: none !important;
+  }
+}
