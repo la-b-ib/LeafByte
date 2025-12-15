@@ -8,7 +8,7 @@
   
 **<summary>Features</summary>**
 
-* **Provides real-time CO₂ tracking with live display, resource breakdown, and smart badge; includes a dashboard with charts, site analytics, trends, and goals; supports gamification with achievements, levels, and streaks; offers customization with location-based factors, alerts, themes, and data export; ensures privacy with local storage, optional sync, and no external tracking; and includes developer tools for audit mode, optimization suggestions, and debug logging.**
+* **Provides real-time CO₂ tracking with live display, resource breakdown includes a dashboard with charts, site analytics, trends, and goals; supports gamification with achievements, levels, and streaks; offers customization with location-based factors, alerts, data export; ensures privacy with local storage, optional sync, and no external tracking includes developer tools for audit mode, optimization suggestions and debug logging.**
 
 * **Emission Calculation: Utilizes the Performance API to derive `Emissions = Data Transfer × Energy/Byte × Carbon Intensity`; defaults assume 475 g CO₂/kWh global average, 0.5 kWh/GB energy factor, with a 50% reduction applied for renewable‑powered (green hosting) sites.**
 
