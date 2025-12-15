@@ -65,22 +65,6 @@
 
 <hr>
 
-## Installation
-
-### From Chrome Web Store (Recommended)
-1. Visit the Chrome Web Store (link coming soon)
-2. Click "Add to Chrome"
-3. Confirm installation
-4. Start browsing sustainably!
-
-### Manual Installation (Developer Mode)
-1. Download or clone this repository
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" in the top right
-4. Click "Load unpacked" and select the LeafByte folder
-5. The extension will appear in your toolbar
-   
-<hr>
 
 ## How It Works
 
@@ -98,27 +82,7 @@ LeafByte uses the Performance API to measure:
 - **Green Hosting Bonus**: 50% reduction for renewable-powered sites
 <hr>
 
-## Usage
 
-### Quick Start
-1. **Install** the extension
-2. **Visit any website** - emissions will be calculated automatically
-3. **Click the badge** in the corner to see detailed breakdown
-4. **Open the popup** (click extension icon) for full dashboard
-5. **Customize settings** via the options page
-
-### Dashboard Navigation
-- **Overview**: Quick stats and current page analysis
-- **Sites**: Per-domain emission tracking and filtering
-- **Trends**: Historical charts and pattern analysis
-- **Goals**: Set targets and track progress
-
-### Settings Configuration
-1. Right-click the extension icon → "Options"
-2. Configure your location for accurate carbon intensity
-3. Set emission thresholds and notification preferences
-4. Customize display options and privacy settings
-<hr>
 
 ## Technical Details
 
