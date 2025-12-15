@@ -122,22 +122,4 @@ LeafByte uses the Performance API to measure:
 
 ## Technical Details
 
-### Browser Compatibility
-- **Chrome**: Version 88+ (Manifest V3)
-- **Edge**: Chromium-based versions
-- **Other Browsers**: Not currently supported
-
-### Permissions Required
-- `storage`: Save settings and emission data
-- `history`: Access browsing history for retroactive calculations
-- `tabs`: Monitor active tabs for real-time tracking
-- `alarms`: Schedule periodic data resets
-- `notifications`: Display emission alerts
-- `declarativeNetRequest`: Optional ad blocking features
-
-### Data Storage
-- **Local Storage**: Emission data, settings, achievements
-- **Sync Storage**: Settings only (if enabled)
-- **No External APIs**: All processing done locally
-<hr>
-
+**Technical Overview**: Compatible with Chrome v88+ (Manifest V3) and Chromium-based Edge; requires `storage`, `history`, `tabs`, `alarms`, `notifications`, and optional `declarativeNetRequest` permissions; persists emission data/settings in `local` and `sync` storage with all computation performed locally (no external APIs).
