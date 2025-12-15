@@ -2,9 +2,7 @@
 
 <samp>
   
-**Making the web more sustainable, one page at a time.**
-
-**LeafByte is a Chrome extension that tracks and displays the carbon emissions of your web browsing, helping you make more environmentally conscious decisions online.**
+**LeafByte is a Chrome extension (v88+ Manifest V3, Edge supported) for real-time CO₂ tracking with smart badge, dashboards, gamification, customization, privacy-first storage, and developer tools. Emissions are calculated via Performance API using data transfer × energy/byte × carbon intensity, with defaults (475 g CO₂/kWh, 0.5 kWh/GB) and 50% reduction for green hosting. All processing is local, no external APIs.**
 
 ## Features
 
