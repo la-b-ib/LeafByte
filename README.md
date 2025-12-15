@@ -9,40 +9,8 @@
 
 ## Features
 
-### 🌍 Real-Time Emission Tracking
-- **Live CO2 Display**: See real-time carbon emissions for every page you visit
-- **Resource Breakdown**: Understand which elements (images, scripts, CSS) contribute most to emissions
-- **Smart Badge**: Non-intrusive overlay showing current page emissions with detailed tooltips
+**Features**: Provides real-time CO₂ tracking with live display, resource breakdown, and smart badge; includes a comprehensive dashboard (interactive charts, site analytics, trends, goals), gamification (achievements, levels, streaks, sharing), advanced customization (location-based factors, alerts, themes, data export), privacy-first design (local storage, optional sync, no external tracking, retention control), and developer tools (audit mode, optimization suggestions, debug logging, API integration with The Green Web Foundation).
 
-### 📊 Comprehensive Dashboard
-- **Interactive Charts**: Visualize your browsing emissions with responsive charts
-- **Site Analytics**: Track emissions per website and identify your highest-impact browsing habits
-- **Trend Analysis**: View daily, weekly, and monthly emission patterns
-- **Goal Setting**: Set and track personal emission reduction targets
-
-### 🎮 Gamification & Motivation
-- **Achievement System**: Earn badges and points for eco-friendly browsing
-- **Level Progression**: Advance through eco-warrior levels
-- **Streak Tracking**: Maintain low-emission browsing streaks
-- **Social Sharing**: Share your environmental achievements
-
-### ⚙️ Advanced Customization
-- **Location-Based Calculations**: Adjust for your local electricity grid's carbon intensity
-- **Threshold Alerts**: Get notified when pages exceed your emission limits
-- **Multiple Themes**: Light, dark, and auto themes
-- **Export Data**: Download your emission data in CSV or JSON format
-
-### 🔒 Privacy-First Design
-- **Local Storage**: All data stored locally on your device
-- **Optional Sync**: Choose to sync across devices with Chrome sync
-- **No External Tracking**: Your browsing data never leaves your control
-- **Data Retention Control**: Set how long to keep emission history
-
-### 🛠️ Developer Tools
-- **Audit Mode**: Detailed performance metrics for web developers
-- **Optimization Suggestions**: Get recommendations to reduce page emissions
-- **Debug Logging**: Console logging for troubleshooting
-- **API Integration**: Green hosting detection via The Green Web Foundation
 
 <hr>
 
@@ -68,19 +36,7 @@
 
 ## How It Works
 
-### Emission Calculation
-LeafByte uses the Performance API to measure:
-- **Data Transfer**: Total bytes downloaded (HTML, CSS, JS, images, etc.)
-- **Energy Consumption**: Estimated device and network energy usage
-- **Carbon Intensity**: Your location's electricity grid carbon factor
-
-**Formula**: `Emissions = Data Transfer × Energy per Byte × Carbon Intensity`
-
-### Default Values
-- **Global Average**: 475g CO2/kWh
-- **Energy Factor**: 0.5 kWh per GB of data
-- **Green Hosting Bonus**: 50% reduction for renewable-powered sites
-<hr>
+**Emission Calculation**: Utilizes the Performance API to derive `Emissions = Data Transfer × Energy/Byte × Carbon Intensity`; defaults assume 475 g CO₂/kWh global average, 0.5 kWh/GB energy factor, with a 50% reduction applied for renewable‑powered (green hosting) sites.
 
 
 
