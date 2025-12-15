@@ -2,7 +2,7 @@
 
 <samp>
   
-**LeafByte is a Chrome extension (v88+ Manifest V3, Edge compatible) that provides real-time CO₂ monitoring via dynamic dashboards, gamification, flexible customization, privacy-focused local storage, and developer utilities. Emissions are calculated through the Performance API as `data transfer × energy/byte × carbon intensity`, using defaults of 475 g CO₂/kWh and 0.5 kWh/GB, with a 50% reduction applied to green-hosted sites. All computation is executed locally without external APIs, delivering accurate insights into energy consumption, carbon intensity, and overall digital footprint.**
+**LeafByte is a Chrome extension provides real-time CO₂ monitoring via dynamic dashboards, gamification, privacy-focused local storage & developer utilities. Emissions are calculated through the Performance API as `data transfer × energy/byte × carbon intensity`, using defaults of 475 g CO₂/kWh and 0.5 kWh/GB, with a 50% reduction applied to green-hosted sites. All processing occurs locally without external APIs, providing accurate insights into energy use, carbon intensity, and digital footprint.**
 
 ## Features
 
